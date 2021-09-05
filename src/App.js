@@ -1,24 +1,34 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import "bootstrap/dist/css/bootstrap.min.css";
+import Container from "react-bootstrap/Container";
+import "./App.css";
+import { Route, Switch, Redirect} from 'react-router-dom';
+
+import Logup from "./user/components/logup/logup";
+// import Navigation from "./user/components/layout/navigation";
+import { HttpRequestesComp } from "./user/HttpRequests/httpRequests"
+import Layout from "./user/components/layout/layout";
+import Comp from "./utilitis/publComp";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <HttpRequestesComp>
+      <Layout>
+        <Container>
+          <Switch>
+            <Route path="/" exact >
+              <Redirect to="/login"></Redirect>
+            </Route>
+            <Route path="/login">
+              <Logup></Logup>
+            </Route>
+            <Route path="/n" >
+            <Comp></Comp>
+          </Route>
+          </Switch>
+        </Container>
+      </Layout>
+    </HttpRequestesComp>
   );
 }
 
