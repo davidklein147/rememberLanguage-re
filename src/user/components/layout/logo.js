@@ -1,6 +1,7 @@
 import React from 'react';
 import Navigation from './navigation';
 import LogButten from './logButton';
+import "./logo.css"
 
 const Logo = () => {
 
@@ -11,12 +12,15 @@ const Logo = () => {
                     <li className="navbar-brand">
                         <h3 className="navLink align-middle" aria-current="page" to="/j">Remember Language</h3>
                     </li>
-                    <Navigation></Navigation>
                 </ul>
-                <form className="d-flex">
+                <form className="d-flex ">
                     <LogButten></LogButten>
                 </form>
             </nav>
+            <aside className = "aside">
+
+                    <Navigation className="flex-column"></Navigation>
+            </aside>
             <br />
         </React.Fragment>
     )

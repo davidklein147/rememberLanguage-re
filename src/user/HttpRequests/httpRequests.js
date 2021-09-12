@@ -1,5 +1,5 @@
 import axios from "axios";
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { useHistory } from "react-router-dom";
 
 const HttpRequests = React.createContext({
@@ -23,7 +23,6 @@ export const HttpRequestesComp = (props) => {
       setIsloggedIn(false);
       localStorage.removeItem("userData")
       localStorage.removeItem("token")
-
       history.push("/")
     }
   }

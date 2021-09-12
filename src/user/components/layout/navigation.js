@@ -1,6 +1,7 @@
 import React, { useContext, useState } from 'react';
 import { NavLink } from 'react-router-dom';
 import HttpRequests from '../../HttpRequests/httpRequests';
+import "./navigation.css";
 import LogButten from './logButton';
 
 
@@ -14,7 +15,7 @@ const Navigation = () => {
             {loggedUp.isLoggedIn && actions.map(action => {
                 return (
                     <li className="navbar-brand ">
-                        <NavLink className="navLink align-middle" activeClassName="active"
+                        <NavLink className={` navLink align-middle`} activeClassName="active"
                             to="#" key={action}>{action}</NavLink>
                     </li>)
             })}

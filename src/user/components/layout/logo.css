@@ -1,3 +1,14 @@
 .mein{
     background-color: aqua;
 }
+
+.aside{
+    float: left;
+    margin-right: 40px;
+    padding-left: 20px;
+    list-style: none;
+    /* background-color:aliceblue; */
+    height: 600px;
+    --bs-bg-opacity: 1;
+    background-color: rgba(var(--bs-light-rgb),var(--bs-bg-opacity))!important;
+}

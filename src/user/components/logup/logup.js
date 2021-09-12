@@ -1,11 +1,8 @@
 import React, { useContext, useEffect, useReducer, useRef, useState } from "react";
-import { Link, Route , Switch} from "react-router-dom"
 import { Form, Button } from "react-bootstrap";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import HttpRequests from "../../HttpRequests/httpRequests";
-import LogButten from "../layout/logButton";
-import Comp from "../../../utilitis/publComp";
 
 
 const passwordReducer = (state, action) => {
@@ -31,6 +28,7 @@ const passwordReducer = (state, action) => {
 };
 
 const Logup = () => {
+  
   const httpRequests = useContext(HttpRequests);
   const emailInserted = useRef();
   const nameInserted = useRef();
@@ -47,13 +45,13 @@ const Logup = () => {
     : "already heve an account ";
   let isLoggedUp_link = httpRequests.alreatyLoggedup ? " log up" : " log in";
 
+ 
+
+
   useEffect(() => {
-    console.log("effect");
-    if (!httpRequests.alreatyLoggedup) {
-      // if(nameInserted.current.value) {nameInserted.current.value = "";}
+    if (!httpRequests.alreatyLoggedup ) {
       emailInserted.current.value = "";
       despatchPassword({ type: "alreadyLoggetUp", value: "" });
-      //passwordState.verifyPassword = "";
     }
   }, [httpRequests.alreatyLoggedup])
 
@@ -82,7 +80,7 @@ const Logup = () => {
     }
   };
 
-  
+
 
   return (
     <React.Fragment>
