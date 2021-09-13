@@ -13,7 +13,7 @@ const HttpRequests = React.createContext({
 
 export const HttpRequestesComp = (props) => {
   const [alreatyLoggedup, setAlreadyLoddedUp] = useState(true);
-  const [isLoggedIn, setIsloggedIn] = useState(false)
+  const [isLoggedIn, setIsloggedIn] = useState(localStorage.getItem("userData"))
 
   const alreadyLoggedUpHandler = () => {
     alreatyLoggedup ? setAlreadyLoddedUp(false) : setAlreadyLoddedUp(true);

@@ -1,10 +1,11 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import Navigation from './navigation';
 import LogButten from './logButton';
 import "./logo.css"
+import HttpRequests from '../../HttpRequests/httpRequests';
 
 const Logo = () => {
-
+    const loggedUp = useContext(HttpRequests)
     return (
         <React.Fragment>
             <nav className="navbar navbar-light bg-light px-3">
@@ -17,10 +18,11 @@ const Logo = () => {
                     <LogButten></LogButten>
                 </form>
             </nav>
-            <aside className = "aside">
-
+            {loggedUp.isLoggedIn &&
+                <aside className="aside">
                     <Navigation className="flex-column"></Navigation>
-            </aside>
+                </aside>
+            }
             <br />
         </React.Fragment>
     )

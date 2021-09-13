@@ -2,7 +2,11 @@ import React, { useContext, useEffect, useReducer, useRef, useState } from "reac
 import { Form, Button } from "react-bootstrap";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
+import "../logup/logup.css"
 import HttpRequests from "../../HttpRequests/httpRequests";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faEye, faEyeSlash } from "@fortawesome/free-solid-svg-icons";
+const eye = <FontAwesomeIcon icon={faEye} />;
 
 
 const passwordReducer = (state, action) => {
@@ -28,7 +32,7 @@ const passwordReducer = (state, action) => {
 };
 
 const Logup = () => {
-  
+
   const httpRequests = useContext(HttpRequests);
   const emailInserted = useRef();
   const nameInserted = useRef();
@@ -39,17 +43,22 @@ const Logup = () => {
     isValid: undefined,
     isThePasswordsMatch: undefined,
   });
+  const [showPassword, setShowPassword] = useState(false);
+
+  const showPasswordHandlar = () => {
+    showPassword ? setShowPassword(false) : setShowPassword(true);
+  }
 
   let isLoggedUp = httpRequests.alreatyLoggedup
     ? "don't have an account yet "
     : "already heve an account ";
-  let isLoggedUp_link = httpRequests.alreatyLoggedup ? " log up" : " log in";
+  let isLoggedUp_link = httpRequests.alreatyLoggedup ? "log up" : "log in";
 
- 
+
 
 
   useEffect(() => {
-    if (!httpRequests.alreatyLoggedup ) {
+    if (!httpRequests.alreatyLoggedup) {
       emailInserted.current.value = "";
       despatchPassword({ type: "alreadyLoggetUp", value: "" });
     }
@@ -113,7 +122,7 @@ const Logup = () => {
             <Form.Group className="mb-3" controlId="password">
               <Form.Label>Password</Form.Label>
               <Form.Control
-                type="password"
+                type={showPassword ? "text" : "password"}
                 placeholder="enter a password"
                 value={passwordState.password}
                 onChange={(event) => {
@@ -123,6 +132,11 @@ const Logup = () => {
                   });
                 }}
               />
+              {passwordState.password &&
+                <div className="showPassword">
+                  {!showPassword && <FontAwesomeIcon icon={faEye} onClick={() => { showPasswordHandlar() }} />}
+                  {showPassword && <FontAwesomeIcon icon={faEyeSlash} onClick={() => { showPasswordHandlar() }} />}
+                </div>}
               <Form.Text className="text-muted">
                 {passwordState.isValid === false &&
                   "more characters need to be entered"}

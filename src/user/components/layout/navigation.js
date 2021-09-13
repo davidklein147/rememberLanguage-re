@@ -6,20 +6,25 @@ import LogButten from './logButton';
 
 
 const Navigation = () => {
-    const loggedUp = useContext(HttpRequests)
 
-    const actions = ["notification", "translate", "input word", "repetition"]
+
+    const actions = [
+        {name: "notification", id: 1, lintTo: "#" },
+        {name: "translate",    id: 1, lintTo: "/input" },
+        {name: "input word",   id: 1, lintTo: "#" },
+        {name: "repetition",   id: 1, lintTo: "#" }
+    ]
 
     return (
-        <React.Fragment>
-            {loggedUp.isLoggedIn && actions.map(action => {
+        <ul className="k">
+            {actions.map(action => {
                 return (
                     <li className="navbar-brand ">
                         <NavLink className={` navLink align-middle`} activeClassName="active"
-                            to="#" key={action}>{action}</NavLink>
+                            to={action.lintTo} key={action.id}>{action.name}</NavLink>
                     </li>)
             })}
-        </React.Fragment>
+        </ul>
     )
 }
 
