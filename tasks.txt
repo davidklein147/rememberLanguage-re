@@ -1,0 +1,42 @@
+tasks for project Remember Language
+
+1. complate input word like angular with basic style.
+2. complate also repetition like angular with basic style.
+3. transfer google translate API to the node server and complate it with his library.
+4. build the translate component with an option to save the translated word.
+
+5. add a option to hear the words, and add it to the app.
+
+6. add a component to work and process words and create words groups.
+    6.1. search words, and display it.
+    6.2. compose words by creating a group.
+    6.3. option to add any word to any group and remove it, and also remove the all group.
+    6.4. constact list of repetitions types with option to add types alone.
+
+6a. groups types:
+
+7. at repetition component:
+    7.1. display all related words sorted by groups.
+    7.2. add a option for each word to process it, with a option to search aother words.
+    7.3. add a option for each word to reapet it and give a score for it.
+    7.4. 
+
+8. notifications:
+    8.1 Add a notification about the sum of words inputted, and how many words need to be added.
+    8.2 Add a notification about the amount of words that have already been repeated, and how many words need to be reapeted.
+
+9. input word component:
+    9.1. option to search words, and create groups.
+
+10. settings:
+
+11. General Information:
+    11.1. Total words there are.
+    11.2. general score on knowledge and consistenc.
+
+12. repetitions types:
+
+
+
+* change translate_word tabel to add column reapet date and last lavel, and at the repetition list to work with it.
+* set cookies for the default language that the user used 
