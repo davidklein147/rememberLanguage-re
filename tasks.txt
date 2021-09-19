@@ -15,7 +15,7 @@ tasks for project Remember Language
 
 6a. groups types:
 
-7. at repetition component:
+7. repetition component:
     7.1. display all related words sorted by groups.
     7.2. add a option for each word to process it, with a option to search aother words.
     7.3. add a option for each word to reapet it and give a score for it.
@@ -24,6 +24,9 @@ tasks for project Remember Language
 8. notifications:
     8.1 Add a notification about the sum of words inputted, and how many words need to be added.
     8.2 Add a notification about the amount of words that have already been repeated, and how many words need to be reapeted.
+
+8.a. n component:
+    8.a.1. bar with the daily words list to reapet, designed with transform and animation.  
 
 9. input word component:
     9.1. option to search words, and create groups.

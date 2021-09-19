@@ -1,6 +1,10 @@
-import axios from "axios";
 import React, { useState } from "react";
-import { useHistory } from "react-router-dom";
+import { useHistory, useLocation, useRouteMatch } from "react-router-dom";
+
+import axios from "axios";
+
+import { n } from "../pages/paths"
+
 
 const HttpRequests = React.createContext({
   alreatyLoggedup: true,
@@ -26,11 +30,11 @@ export const HttpRequestesComp = (props) => {
       history.push("/")
     }
   }
-
- const history = useHistory()
-
+  
+  const history = useHistory()
+  
   const origin = "http://localhost:8090";
-
+  
   const logupPostMethod = async (path, body) => {
     console.log(path, body);
     try {
@@ -41,7 +45,7 @@ export const HttpRequestesComp = (props) => {
       console.error(error);
     }
   }
-
+  
   const loginPostMethod = async (path, body) => {
     console.log(path, body);
     try {
@@ -49,13 +53,14 @@ export const HttpRequestesComp = (props) => {
       console.log(userData);
       localStorage.setItem("userData", JSON.stringify(userData.data));
       localStorage.setItem("token", userData.data.token);
-      history.push("/n")
+      history.push(`/${n}`)
       setIsloggedIn(true)
-
+      
     } catch (error) {
       console.error(error);
     }
   };
+ 
   
   return (
     <HttpRequests.Provider value={{

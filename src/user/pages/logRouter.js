@@ -1,16 +1,17 @@
 import React from "react";
-import { Switch, Route, Redirect } from "react-router-dom";
-import InputNewWord from "../components/inputWords/inputWord";
+import { Switch, Route, Redirect , useRouteMatch } from "react-router-dom";
+import InputNewWord from "./inputWord";
 const LogRouter = ()=>{
+    const match = useRouteMatch()
+    
     return(
         <React.Fragment>
             <h1>hello</h1>
-            <Route path ="/n" exact>
-                <Redirect to="/n/input"/> 
+            <Route path ={`${match.path}`} exact>
+                <Redirect to={`${match.path}/input`}/> 
             </Route> 
-            <Route path = "/n/input">
+            <Route path = {`${match.path}/input`}>
                 <InputNewWord></InputNewWord>
-                <h3>have a good day</h3>
             </Route>
         </React.Fragment>
     )

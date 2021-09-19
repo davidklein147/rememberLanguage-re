@@ -12,7 +12,7 @@ export class RepetitionData {
     }
     //need to ensure that @parem oldLavel and @param scroe are correct
     setLavel(oldLavel, score, lavels) {
-        if (this.#lavel == lavels.sumLavels) {
+        if (this.#lavel === lavels.sumLavels) {
             this.#lavel = oldLavel;
         }
         else if ((oldLavel > 0 && oldLavel <= lavels.sumLavels) &&
@@ -109,7 +109,7 @@ export class Scores {
         else if (Math.abs(value) >= this.sumLavels) {
             throw new Error("incorrect value");
         }
-        else if (value == undefined) {
+        else if (value === undefined) {
             this.lavelsOfEachScore.splice(this.lavelsOfEachScore.length - 2, 0, value);
         }
         else {

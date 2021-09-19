@@ -1,9 +1,7 @@
 import React, { useContext, useEffect, useState } from "react"
-import { useHistory } from "react-router-dom"
 import HttpRequests from "../../HttpRequests/httpRequests"
 
 const LogButten = () => {
-    const history = useHistory()
     const loggedUp = useContext(HttpRequests)
     const isLoggedIn_linkHandler = () => {
         if (loggedUp.isLoggedIn) {
@@ -32,9 +30,9 @@ const LogButten = () => {
 
     return (
         <React.Fragment>
-            <a className=" px-3 border border-primary border-2 rounded-pill" onClick={() => { logHandler() }}>
+            <div className=" px-3 border border-primary border-2 rounded-pill" onClick={() => { logHandler() }}>
                 {lsLoggedIn_link}
-            </a>
+            </div>
         </React.Fragment>
     )
 }
