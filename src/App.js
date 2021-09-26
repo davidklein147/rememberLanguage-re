@@ -9,6 +9,7 @@ import Logup from "./user/components/logup/logup";
 import { HttpRequestesComp } from "./user/HttpRequests/httpRequests"
 import Layout from "./user/components/layout/layout";
 import LogRouter from "./user/pages/logRouter";
+import InputNewWord from "./user/pages/inputNewWord";
 import { n } from "./user/pages/paths"
 
 function App() {
@@ -25,6 +26,9 @@ function App() {
             </Route>
             <Route path={`/${n}`} >
               <LogRouter></LogRouter>
+            </Route>
+            <Route path={`/input`} >
+              <InputNewWord></InputNewWord>
             </Route>
           </Switch>
         </Container>

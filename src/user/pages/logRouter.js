@@ -1,6 +1,6 @@
 import React from "react";
 import { Switch, Route, Redirect , useRouteMatch } from "react-router-dom";
-import InputNewWord from "./inputWord";
+import InputNewWord from "./inputNewWord";
 const LogRouter = ()=>{
     const match = useRouteMatch()
     
